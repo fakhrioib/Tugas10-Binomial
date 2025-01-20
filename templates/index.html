@@ -3,57 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Probabilitas Pengiriman Same-Day Delivery</title>
+    <title>Prediksi Keberhasilan Promosi Flash Sale pada Marketplace</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Kalkulator Probabilitas Pengiriman Same-Day Delivery</h1>
+        <h1>Prediksi Keberhasilan Promosi Flash Sale pada Marketplace</h1>
         
         <div class="input-section">
             <div class="form-group">
-                <label for="n">Jumlah Total Pengiriman (n):</label>
+                <label for="n">Total Produk Flash Sale (n):</label>
                 <input type="number" id="n" min="1" value="10">
             </div>
             
             <div class="form-group">
-                <label for="p">Probabilitas Sukses per Pengiriman (p):</label>
+                <label for="p">Probabilitas Sukses per Produk (p):</label>
                 <input type="number" id="p" min="0" max="1" step="0.01" value="0.5">
             </div>
             
             <div class="form-group">
-                <label for="k">Jumlah Sukses yang Diinginkan (k):</label>
+                <label for="k">Target Penjualan (k):</label>
                 <input type="number" id="k" min="0" value="5">
             </div>
             
-            <button onclick="calculateProbability()">Hitung Probabilitas</button>
+            <button onclick="calculateProbability()">Hitung Prediksi</button>
         </div>
 
         <div class="results-section">
             <div class="result-box">
-                <h3>Probabilitas Tepat k Sukses:</h3>
+                <h3>Probabilitas Tepat k Penjualan:</h3>
                 <p id="exact-result">-</p>
             </div>
             
             <div class="result-box">
-                <h3>Probabilitas ≤ k Sukses:</h3>
+                <h3>Probabilitas ≤ k Penjualan:</h3>
                 <p id="cumulative-result">-</p>
             </div>
             
             <div class="result-box">
-                <h3>Probabilitas > k Sukses:</h3>
+                <h3>Probabilitas > k Penjualan:</h3>
                 <p id="more-result">-</p>
             </div>
             
             <div class="result-box">
-                <h3>Probabilitas ≥ k Sukses:</h3>
+                <h3>Probabilitas ≥ k Penjualan:</h3>
                 <p id="at-least-result">-</p>
             </div>
         </div>
 
         <div class="solution-section">
-            <h2>Solusi Langkah demi Langkah:</h2>
+            <h2>Analisis Detail:</h2>
             <div id="step-by-step-solution"></div>
         </div>
 

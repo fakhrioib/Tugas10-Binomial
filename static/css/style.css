@@ -7,7 +7,7 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f0f2f5;
+    background: linear-gradient(135deg, #fff7f2 0%, #ffe4d3 100%);
     color: #333;
 }
 
@@ -19,15 +19,16 @@ body {
 
 h1 {
     text-align: center;
-    color: #1a73e8;
+    color: #ff6b00;
     margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .input-section {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
     margin-bottom: 2rem;
 }
 
@@ -39,18 +40,25 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: #ff8534;
 }
 
 input {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid #ffd1b3;
     border-radius: 4px;
     font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff6b00;
 }
 
 button {
-    background-color: #1a73e8;
+    background: linear-gradient(45deg, #ff6b00 0%, #ff8534 100%);
     color: white;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -59,11 +67,13 @@ button {
     font-size: 1rem;
     width: 100%;
     margin-top: 1rem;
-    transition: background-color 0.3s;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(255, 107, 0, 0.2);
 }
 
 button:hover {
-    background-color: #1557b0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
 }
 
 .results-section {
@@ -77,12 +87,17 @@ button:hover {
     background: white;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.result-box:hover {
+    transform: translateY(-5px);
 }
 
 .result-box h3 {
-    color: #1a73e8;
+    color: #ff6b00;
     margin-bottom: 0.5rem;
     font-size: 1rem;
 }
@@ -90,42 +105,43 @@ button:hover {
 .result-box p {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #ff8534;
 }
 
 .graph-section {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-    .results-section {
-        grid-template-columns: 1fr;
-    }
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
 }
 
 .solution-section {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
     margin: 2rem 0;
 }
 
 .step {
     margin-bottom: 1.5rem;
     padding: 1rem;
-    border-left: 3px solid #1a73e8;
-    background: #f8f9fa;
+    border-left: 3px solid #ff6b00;
+    background: #fff7f2;
 }
 
 .step h3 {
-    color: #1a73e8;
+    color: #ff6b00;
     margin-bottom: 0.5rem;
 }
 
 .step p {
     margin: 0.5rem 0;
     line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .results-section {
+        grid-template-columns: 1fr;
+    }
 }

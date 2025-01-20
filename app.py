@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import numpy as np
 from scipy.stats import binom
+import os
 
 app = Flask(__name__)
 
@@ -12,9 +13,9 @@ def home():
 def calculate():
     try:
         data = request.get_json()
-        n = int(data['n'])  # Jumlah total pengiriman
-        p = float(data['p'])  # Probabilitas sukses per pengiriman
-        k = int(data['k'])  # Jumlah sukses yang diinginkan
+        n = int(data['n'])  # Total jumlah produk flash sale
+        p = float(data['p'])  # Probabilitas sukses per promosi
+        k = int(data['k'])  # Target penjualan yang diinginkan
         
         # Menghitung probabilitas tepat k sukses
         prob_exact = binom.pmf(k, n, p)
@@ -45,4 +46,5 @@ def calculate():
         return jsonify({"error": str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
